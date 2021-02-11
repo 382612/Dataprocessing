@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 7 of /Users/bengels/Desktop/Thema11_application_disign/dataprocessing/Dataprocessing/snakemake-test/Snakefile.txt:
+Missing input files for rule quantify_genes:
+data/Sample3.R1.fastq.gz
+data/Sample3.R2.fastq.gz
