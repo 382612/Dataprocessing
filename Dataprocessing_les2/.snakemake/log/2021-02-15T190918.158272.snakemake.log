@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	bwa_map
+	2	samtools_sort
+	3
+
+[Mon Feb 15 19:09:18 2021]
+Job 3: executing bwa mem on the following data/genome.fa data/samples/C.fastq to generate the following mapped_reads/C.bam
+
+[Mon Feb 15 19:09:19 2021]
+Finished job 3.
+1 of 3 steps (33%) done
+
+[Mon Feb 15 19:09:19 2021]
+rule samtools_sort:
+    input: mapped_reads/B.bam
+    output: sorted_reads/B.bam
+    jobid: 4
+    wildcards: sample=B
+
+[Mon Feb 15 19:09:19 2021]
+Finished job 4.
+2 of 3 steps (67%) done
+
+[Mon Feb 15 19:09:19 2021]
+rule samtools_sort:
+    input: mapped_reads/C.bam
+    output: sorted_reads/C.bam
+    jobid: 2
+    wildcards: sample=C
+
+[Mon Feb 15 19:09:19 2021]
+Finished job 2.
+3 of 3 steps (100%) done
+Complete log: /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les2/.snakemake/log/2021-02-15T190918.158272.snakemake.log

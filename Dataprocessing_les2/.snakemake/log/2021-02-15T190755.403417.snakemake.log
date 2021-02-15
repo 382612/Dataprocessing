@@ -1,0 +1,2 @@
+SyntaxError in line 18 of /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les2/Snakefile:
+Command must be given as string after the shell keyword. (Snakefile, line 18)

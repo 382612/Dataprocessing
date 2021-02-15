@@ -1,0 +1,6 @@
+all
+bwa_map
+samtools_sort
+samtools_index
+bcftools_call
+report

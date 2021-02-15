@@ -1,0 +1,19 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 5
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	report
+	1
+
+[Mon Feb 15 20:53:27 2021]
+rule report:
+    input: calls/all.vcf
+    output: out.html
+    jobid: 0
+
+[Mon Feb 15 20:53:28 2021]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les2/.snakemake/log/2021-02-15T205327.765326.snakemake.log

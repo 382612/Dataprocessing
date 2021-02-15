@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 5
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	bcftools_call
+	1
+
+[Mon Feb 15 20:50:36 2021]
+rule bcftools_call:
+    input: data/genome.fa, sorted_reads/A.bam, sorted_reads/B.bam, sorted_reads/C.bam, sorted_reads/A.bam.bai, sorted_reads/B.bam.bai, sorted_reads/C.bam.bai
+    output: calls/all.vcf
+    jobid: 0
+
+[Mon Feb 15 20:50:36 2021]
+Error in rule bcftools_call:
+    jobid: 0
+    output: calls/all.vcf
+    shell:
+        samtools mpileup -g -f data/genome.fa sorted_reads/A.bam sorted_reads/B.bam sorted_reads/C.bam | bcftools call -mv - > calls/all.vcf
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job bcftools_call since they might be corrupted:
+calls/all.vcf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les2/.snakemake/log/2021-02-15T205036.509604.snakemake.log

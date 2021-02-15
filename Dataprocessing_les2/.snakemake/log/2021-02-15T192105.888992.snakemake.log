@@ -1,0 +1,42 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 6
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	3	samtools_index
+	3
+
+[Mon Feb 15 19:21:05 2021]
+rule samtools_index:
+    input: sorted_reads/C.bam
+    output: sorted_reads/C.bam.bai
+    jobid: 6
+    wildcards: sample=C
+
+
+[Mon Feb 15 19:21:05 2021]
+rule samtools_index:
+    input: sorted_reads/A.bam
+    output: sorted_reads/A.bam.bai
+    jobid: 3
+    wildcards: sample=A
+
+
+[Mon Feb 15 19:21:05 2021]
+rule samtools_index:
+    input: sorted_reads/B.bam
+    output: sorted_reads/B.bam.bai
+    jobid: 0
+    wildcards: sample=B
+
+[Mon Feb 15 19:21:05 2021]
+Finished job 6.
+1 of 3 steps (33%) done
+[Mon Feb 15 19:21:05 2021]
+Finished job 3.
+2 of 3 steps (67%) done
+[Mon Feb 15 19:21:05 2021]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les2/.snakemake/log/2021-02-15T192105.888992.snakemake.log

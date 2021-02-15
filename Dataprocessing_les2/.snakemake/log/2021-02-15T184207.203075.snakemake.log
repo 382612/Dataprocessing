@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 5
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	bwa_map
+	1
+
+[Mon Feb 15 18:42:07 2021]
+rule bwa_map:
+    input: data/genome.fa, data/samples/A.fastq
+    output: mapped_reads/A.bam
+    jobid: 0
+
+[Mon Feb 15 18:42:07 2021]
+Error in rule bwa_map:
+    jobid: 0
+    output: mapped_reads/A.bam
+    shell:
+        bwa mem data/genome.fa data/samples/A.fastq | samtools view -Sb - > mapped_reads/A.bam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job bwa_map since they might be corrupted:
+mapped_reads/A.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les2/.snakemake/log/2021-02-15T184207.203075.snakemake.log

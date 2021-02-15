@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 5 of /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les2/Snakefile:
+Missing input files for rule all:
+report.html
