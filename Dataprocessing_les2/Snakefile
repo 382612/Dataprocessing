@@ -1,12 +1,28 @@
 # -*- python -*-
+"""
+This is a simple pipeline that maps the reads of a genome.
+It uses multipel reads to mapped agains a genome.file
+Input:
+      * sample files
+      * genome
+Output:
+      * html file
+
+"""
 
 SAMPLES = ["A", "B", "C"]
-
+"""
+Runs pipeline
+"""
 rule all:
     input:
         "out.html"
     message: "final report in html"
 
+"""
+Uses the bwa mem to great bam files of the input files.
+BWA is a software package for mapping low-divergent sequences against a large reference genome.
+"""
 rule bwa_map:
     input:
         "data/genome.fa",
@@ -17,6 +33,10 @@ rule bwa_map:
     shell:
         "bwa mem {input} | samtools view -Sb - > {output}"
 
+"""
+The Samtool sort is used to sort the output bam files.
+Sort alignments by leftmost coordinates, or by read name when -n is used.
+"""
 rule samtools_sort:
     input:
         "mapped_reads/{sample}.bam"
@@ -25,8 +45,12 @@ rule samtools_sort:
     message: "sorted mapped reads in new diractory "
     shell:
         "samtools sort -T sorted_reads/{wildcards.sample} "
-        "-O bam {input} > {output}"	   
+        "-O bam {input} > {output}"
 
+"""
+change the bam files to bam.bai
+and index the sorted reads.
+"""
 rule samtools_index:
     input:
         "sorted_reads/{sample}.bam"
@@ -36,6 +60,9 @@ rule samtools_index:
     shell:
         "samtools index {input}"
 
+"""
+Here samtools uses mpileups to generate text pileup output for one or multiple BAM files. Each input file produces a separate group of pileup columns in the output.
+"""
 rule bcftools_call:
     input:
         fa="data/genome.fa",
@@ -48,6 +75,9 @@ rule bcftools_call:
         "samtools mpileup -g -f {input.fa} {input.bam} | "
         "bcftools call -mv - > {output}"
 
+"""
+Create a report for the all.vcf in te form of a html page.
+"""
 rule report:
     input:
         "calls/all.vcf"
@@ -62,10 +92,8 @@ rule report:
         report("""
         An example workflow
         ===================================
-
-        Reads were mapped to the Yeas reference genome 
+        Reads were mapped to the Yeas reference genome
         and variants were called jointly with
         SAMtools/BCFtools.
-
         This resulted in {n_calls} variants (see Table T1_).
         """, output[0], metadata="Author: Mr Pipeline", T1=input[0])
