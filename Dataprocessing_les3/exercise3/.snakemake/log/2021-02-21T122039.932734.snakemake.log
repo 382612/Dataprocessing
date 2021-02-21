@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 31 of /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les3/exercise3/Snakefile:
+Missing input files(Using '~' in your paths is not allowed as such platform specific syntax is not resolved by Snakemake. In general, try sticking to relative paths for everything inside the working directory.) for rule bwa_map:
+~/Desktop/Thema11_applicationdesign/dataprocessing/Dataprocessing_les3/exercise3/data/samples/A.fastq
+~/Desktop/Thema11_applicationdesign/dataprocessing/Dataprocessing_les3/exercise3/data/genome.fa

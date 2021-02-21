@@ -1,0 +1,14 @@
+URLError in line 28 of /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les3/exercise1/Snakefile:
+<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1108)>
+  File "/Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les3/exercise1/Snakefile", line 28, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/snakemake/remote/NCBI.py", line 65, in search
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/snakemake/remote/NCBI.py", line 713, in search
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/snakemake/remote/NCBI.py", line 697, in esearch_json
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/Bio/Entrez/__init__.py", line 234, in esearch
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/Bio/Entrez/__init__.py", line 569, in _open
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 222, in urlopen
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 525, in open
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 542, in _open
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 502, in _call_chain
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 1360, in https_open
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/urllib/request.py", line 1320, in do_open

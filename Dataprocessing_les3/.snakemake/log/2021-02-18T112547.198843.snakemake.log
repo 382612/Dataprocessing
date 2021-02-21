@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 5
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	try
+	1
+
+[Thu Feb 18 11:25:47 2021]
+rule try:
+    input: bioinf.nl/~fennaf/snakemake/test.txt
+    output: test.txt
+    jobid: 0
+
+Downloading from remote: bioinf.nl/~fennaf/snakemake/test.txt
+Finished download.
+[Thu Feb 18 11:25:48 2021]
+Error in rule try:
+    jobid: 0
+    output: test.txt
+    shell:
+        wget bioinf.nl/~fennaf/snakemake/test.txt
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les3/.snakemake/log/2021-02-18T112547.198843.snakemake.log

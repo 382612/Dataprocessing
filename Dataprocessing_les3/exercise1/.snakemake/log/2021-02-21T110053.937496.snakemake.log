@@ -1,0 +1,3 @@
+NameError in line 13 of /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les3/exercise1/Snakefile:
+name 'HTTPRemoteProvider' is not defined
+  File "/Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les3/exercise1/Snakefile", line 13, in <module>

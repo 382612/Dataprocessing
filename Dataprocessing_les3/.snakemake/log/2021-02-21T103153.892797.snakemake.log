@@ -1,0 +1,3 @@
+Building DAG of jobs...
+File path 'KY785484.1.fasta ' ends with whitespace. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+Cancelling snakemake on user request.

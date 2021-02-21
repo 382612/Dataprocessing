@@ -1,0 +1,37 @@
+# -*- python -*-
+import os
+from snakemake.remote.NCBI import RemoteProvider as NCBIRemoteProvider
+'''
+import os
+from snakemake.remote.NCBI import RemoteProvider as NCBIRemoteProvider
+
+from snakemake.remote.HTTP import RemoteProvider as HTTPRemoteProvider
+"""
+File for getting file form server. 
+Install wget with 'brew install wget'
+
+Email is required by NCBI
+"""
+HTTP = HTTPRemoteProvider()
+"""
+HTTP is used of a remote port.
+Outputname is the same as the test.txt
+"""
+
+rule get_file_from_wgetexample:
+    input:
+        HTTP.remote("bioinf.nl/~fennaf/snakemake/test.txt")
+    output:
+        "test.txt"
+    shell:
+        "wget {input}"
+'''
+NCBI = NCBIRemoteProvider(email="f.feenstra@pl.hanze.nl") # email required by NCBI to prevent abuse
+
+rule all:
+    input:
+         NCBI.remote("KY785484.1.fasta", db= "nuccore", )
+    output:
+          "test.fasta"
+    shell:
+         "cat {input} > {output}"

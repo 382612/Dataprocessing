@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 5
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1
+
+[Sun Feb 21 11:26:32 2021]
+rule all:
+    input: KY785484.1.fasta
+    output: test.fasta
+    jobid: 0
+
+Downloading from remote: KY785484.1.fasta
+Fetching 1 entries from NCBI: KY785484.1
+
+not overwriting, checking for existence
+Fetching file 1: KY785484.1, try #1
+Finished download.
+Removing local copy of remote file: KY785484.1.fasta
+[Sun Feb 21 11:26:35 2021]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les3/exercise1/.snakemake/log/2021-02-21T112630.147967.snakemake.log

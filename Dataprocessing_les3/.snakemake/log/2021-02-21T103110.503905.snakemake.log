@@ -1,0 +1,5 @@
+NCBIFileException in line 36 of /Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les3/Snakefile:
+DB specified is not valid. Options include: bioproject, biosample, biosystems, gds, gene, homologene, mesh, nlmcatalog, nuccore, nucest, nucgss, protein, popset, pmc, pubmed, sequences, snp, sra, taxonomy
+  File "/Users/bengels/Desktop/Thema11_application_design/dataprocessing/Dataprocessing/Dataprocessing_les3/Snakefile", line 36, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/snakemake/remote/__init__.py", line 102, in remote
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/snakemake/remote/NCBI.py", line 104, in __init__

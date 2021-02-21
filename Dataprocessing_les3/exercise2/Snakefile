@@ -1,0 +1,17 @@
+# -*- python -*-
+import os
+from snakemake.remote.NCBI import RemoteProvider as NCBIRemoteProvider
+
+NCBI = NCBIRemoteProvider(email="f.feenstra@pl.hanze.nl") # email required by NCBI to prevent abuse
+
+query = '"Zika virus"[Organism] AND (("9000"[SLEN] : "20000"[SLEN]) AND ("2017/03/20"[PDAT] : "2017/03/24"[PDAT])) '
+accessions = NCBI.search(query, retmax=3)
+input_files = expand("{acc}.fasta", acc=accessions)
+
+rule creat_multifasta:
+    input:
+         NCBI.remote(input_files, db= "nuccore", seq_start = 5000)
+    output:
+          "multi.fasta"
+    shell:
+         "cat {input} > {output}"

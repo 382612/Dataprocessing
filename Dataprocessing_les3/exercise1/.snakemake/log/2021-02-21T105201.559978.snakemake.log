@@ -1,0 +1,12 @@
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules get_file_from_wgetexample and all are ambiguous for the file test.txt.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	get_file_from_wgetexample: 
+	all: 
+Expected input files:
+	get_file_from_wgetexample: bioinf.nl/~fennaf/snakemake/test.txt
+	all: Expected output files:
+	get_file_from_wgetexample: test.txt
+	all: test.txt
